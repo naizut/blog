@@ -2,20 +2,39 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
+	"blog/pkg/setting"
+	"blog/routers/api/v1"
 )
 
-func InitRouter() {
-	router := gin.Default();
+// func InitRouter() {
+//     router := gin.Default()
+//     router.GET("/test", func(c *gin.Context) {
+//         c.JSON(200, gin.H{
+//             "message": "test",
+//         })
+//     })
+// }
 
-	router.GET("/:name", func(c *gin.Context) {
-		name := c.Param("name")
-		c.String(http.StatusOK, "Bonjour, Je suis Marchelli %s", name)
-	})
-	
-	router.GET("", func(c *gin.Context) {
-		c.String(http.StatusOK, "Bonjour, Je suis Marchelli12")
-	})
-	
-	router.Run(":8080")
+func InitRouter() *gin.Engine {
+    r := gin.New()
+
+    r.Use(gin.Logger())
+
+    r.Use(gin.Recovery())
+
+    gin.SetMode(setting.RunMode)
+
+    apiv1 := r.Group("/api/v1")
+    {
+        //获取标签列表
+        apiv1.GET("/tags", v1.GetTags)
+        //新建标签
+        apiv1.POST("/tags", v1.AddTags)
+        //更新指定标签
+        apiv1.PUT("/tags/:id", v1.EditTags)
+        //删除指定标签
+        apiv1.DELETE("/tags/:id", v1.DeleteTags)
+    }
+
+    return r
 }
