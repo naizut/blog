@@ -2,7 +2,7 @@ package router
 
 import (
     "github.com/gin-gonic/gin"
-    "github.com/gin-contrib/cors"
+    // "github.com/gin-contrib/cors"
     
     "blog/pkg/setting"
     "blog/routers/api"
@@ -18,7 +18,7 @@ func InitRouter() *gin.Engine {
 
     r.Use(gin.Recovery())
 
-    r.Use(cors.Default())
+    // r.Use(cors.Default())
 
     gin.SetMode(setting.RunMode)
 

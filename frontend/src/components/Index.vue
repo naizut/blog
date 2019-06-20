@@ -1,6 +1,6 @@
 <template>
 <div id="main">
-<button v-on:click="getArticles">Go</button>
+<button type="button" v-on:click="getArticles">Go</button>
 </div>
 </template>
 
@@ -17,15 +17,15 @@ export default {
     getArticles: function () {
       axios.get('/api/v1/articles', {
         params: {
-          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiJhZG1pbjEyMyIsImV4cCI6MTU2MDk0NjQ3MCwiaXNzIjoiZ2luLWJsb2cifQ.7DVN62IB4ekGFVWkPVqJtLQt-idQb284IwcZbP4EVCU'
+          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiJhZG1pbjEyMyIsImV4cCI6MTU2MTAwNDUyNywiaXNzIjoiZ2luLWJsb2cifQ.CnoWN6OYsN-tXbCQ-h5R1xSrlJKYxrgLzENwgnXIJ0w'
         }
       })
         .then(function (res) {
-          let $txt_res = JSON.stringify(res["data"]["data"]["lists"][0]["title"])
+          let $txt_res = JSON.stringify(res['data']['data'])
           console.log($txt_res)
         })
         .catch(function (error) {
-          console.log("An error occurs:" + error)
+          console.log('An error occurs:' + error)
         })
     }
   }
