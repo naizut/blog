@@ -1,0 +1,41 @@
+@import '../../assets/css/response.scss';
+
+*{
+    padding:0;
+    margin:0;
+}
+
+#header{
+    background:#fff;
+    height:80px;
+    border-bottom:1px solid #ccc;
+    padding:0 20px;
+    max-width:1200px;
+    margin:auto;
+    @include media(w1200){
+        margin:0 20px;
+    }
+    .navbar-brand{
+        float:left;
+        line-height:80px;
+        a{
+            text-decoration: none;
+        }
+    }
+    .navbar-navlist{
+        float:right;
+        ul{
+            list-style-type: none;
+            line-height:80px;
+            li{
+                float:left;
+                margin-left:20px;
+            }
+        }
+    }
+}
+
+#footer{
+    border-top:1px solid #ccc;
+    
+}
