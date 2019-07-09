@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import '@/assets/css/global.scss'
 
 import axios from 'axios'
 

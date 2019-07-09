@@ -1,15 +1,15 @@
 package api
 
 import (
-    "log"
-    "net/http"
-
-    "github.com/gin-gonic/gin"
-    "github.com/astaxie/beego/validation"
-
     "blog/pkg/e"
     "blog/pkg/utils"
     "blog/models"
+
+    "github.com/gin-gonic/gin"
+    "github.com/astaxie/beego/validation"
+    
+    "log"
+    "net/http"
 )
 
 type auth struct {
@@ -20,7 +20,6 @@ type auth struct {
 func GetAuth(c *gin.Context) {
     var loginAuth auth
     c.BindJSON(&loginAuth)
-    c.JSON(http.StatusOK, gin.H{"user": loginAuth.Username})
 
     valid := validation.Validation{}
     // a := auth{Username: username, Password: password}

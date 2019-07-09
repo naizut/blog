@@ -1,6 +1,7 @@
 <template>
 <div id="main">
-<button type="button" v-on:click="getArticles">Go</button>
+  <div class="banner home-banner"></div>
+  <div class="whatsnew"></div>
 </div>
 </template>
 

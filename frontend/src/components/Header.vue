@@ -7,14 +7,28 @@
   </div>
   <div class="navbar-navlist">
     <ul class="nav">
-      <li>Inspire</li>
-      <li>Design</li>
-      <li>Development</li>
-      <li>Contact</li>
+      <li>
+        <router-link to="/inspire">
+          <a class="btn-link">Inspire</a>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/tech">
+          <a class="btn-link">Devlopment</a>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/contact">
+          <a class="btn-link">Contact</a>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/login">
+          <a class="btn-link nav-login">Login</a>
+        </router-link>
+      </li>
     </ul>
-    <router-link to="/login">
-      <a class="nav-login">Login</a>
-    </router-link>
+
   </div>
 </header>
 </template>
@@ -24,7 +38,7 @@ export default {
   name: 'Header',
   data () {
     return {
-      logo_txt: "Kenny's Zion"
+      logo_txt: "Kai's Blog"
     }
   }
 }
