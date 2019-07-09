@@ -24,14 +24,18 @@ export default {
   },
   methods: {
     userLogin: function (event) {
-      console.log(this.user)
-      axios.post('/api/auth', JSON.stringify(this.user))
+      console.log('form:' + JSON.stringify(this.user))
+      axios.post('/api/auth', JSON.stringify(this.user), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
         .then(function (res) {
           let $token = JSON.stringify(res)
           console.log($token)
         })
         .catch(function (error) {
-          console.log('An error occurs:' + error)
+          console.log('Login request failed:' + error)
         })
     }
   }
