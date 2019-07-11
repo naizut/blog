@@ -22,13 +22,16 @@
           <a class="btn-link">Contact</a>
         </router-link>
       </li>
+    </ul>
+  </div>
+  <div class="navbar-status">
+    <ul class="nav">
       <li>
         <router-link to="/login">
           <a class="btn-link nav-login">Login</a>
         </router-link>
       </li>
     </ul>
-
   </div>
 </header>
 </template>

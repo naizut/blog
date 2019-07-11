@@ -1,29 +1,32 @@
 <template>
 <div id="main">
   <div class="banner home-banner"></div>
-  <div class="whatsnew"></div>
+  <div class="whatsnew">{{articleText}}</div>
 </div>
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: 'Index',
   data () {
     return {
-      logo_txt: 'Duiwu'
+      logo_txt: 'Duiwu',
+      articleText: ''
     }
+  },
+  created () {
+    this.getArticles()
+  },
+  computed: {
+
   },
   methods: {
     getArticles: function () {
-      axios.get('/api/api/v1/articles', {
-        params: {
-          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiJhZG1pbjEyMyIsImV4cCI6MTU2MjU4MDUyOSwiaXNzIjoiZ2luLWJsb2cifQ.xkLvAEhMGDP9SRKS1Nc87C_1cXgohFvW4IAikrbC9Ck'
-        }
-      })
-        .then(function (res) {
-          let $txtRes = JSON.stringify(res['data']['data'])
-          console.log($txtRes)
+      this.axios.get('/api/api/v1/articles')
+        .then((res) => {
+          let $con = JSON.stringify(res['data']['data']['lists'][0]['content'])
+          this.articleText = $con
+          console.log($con)
         })
         .catch(function (error) {
           console.log('An error occurs:' + error)

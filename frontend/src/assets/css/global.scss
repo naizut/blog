@@ -7,6 +7,13 @@
     font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "MicrosoftYaHei", sans-serif;
 }
 body,html{
+}
+
+#app{
+    height:calc(100vh - 160px);
+    max-width:1200px;
+    margin:auto;
+    margin-top:80px;
     background:#000;
 }
 
@@ -28,7 +35,7 @@ body,html{
             color:#fff;
         }
     }
-    .navbar-navlist{
+    .navbar-navlist,.navbar-status{
         ul{
             list-style-type: none;
             line-height:80px;
@@ -41,6 +48,9 @@ body,html{
                 }
             }
         }
+    }
+    .navbar-status{
+        float:right;
     }
 }
 

@@ -7,7 +7,7 @@ import router from './router'
 import axios from 'axios'
 
 Vue.config.productionTip = false
-Vue.prototype.$ajax = axios
+Vue.prototype.axios = axios
 /* eslint-disable no-new */
 
 new Vue({
