@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: 'Login',
   data () {
@@ -25,7 +24,7 @@ export default {
   methods: {
     userLogin: function (event) {
       console.log('form:' + JSON.stringify(this.user))
-      axios.post('/api/auth', JSON.stringify(this.user), {
+      this.axios.post('/api/auth', JSON.stringify(this.user), {
         headers: {
           'Content-Type': 'application/json'
         }
