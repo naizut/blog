@@ -17,11 +17,21 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
-    },
-    {
-      path: '/admin',
-      name: 'admin',
-      component: Admin
     }
+    // {
+    //   path: '/admin',
+    //   name: 'admin',
+    //   component: Admin,
+    //   children: [
+    //     {
+    //       path: 'user',
+    //       component: User,
+    //       name: 'User'
+    //     },
+    //     {
+    //       path: 'article'
+    //     }
+    //   ]
+    // }
   ]
 })
