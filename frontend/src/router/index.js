@@ -2,7 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
 import Login from '@/components/Login'
-import Admin from '@/components/Admin'
+import Admin from '@/components/admin/Admin'
+import UserAdmin from '@/components/admin/User'
+import ArticleAdmin from '@/components/admin/Article'
+
 Vue.use(Router)
 
 export default new Router({
@@ -17,21 +20,21 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: Admin
+    },
+    {
+      path: '/admin/user',
+      name: 'useradmin',
+      component: UserAdmin
+    },
+    {
+      path: '/admin/article',
+      name: 'articleadmin',
+      component: ArticleAdmin
     }
-    // {
-    //   path: '/admin',
-    //   name: 'admin',
-    //   component: Admin,
-    //   children: [
-    //     {
-    //       path: 'user',
-    //       component: User,
-    //       name: 'User'
-    //     },
-    //     {
-    //       path: 'article'
-    //     }
-    //   ]
-    // }
   ]
 })

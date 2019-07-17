@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     headerShow: function () {
-      return !(this.path === '/admin')
+      return !(this.path.indexOf('/admin') !== -1)
     }
   },
   // admin页面中取消引入Header
